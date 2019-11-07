@@ -14,6 +14,12 @@ def map():
 @app.route('/store')
 def store():
 	return render_template("store.html")
+@app.route('/cart')
+def cart():
+	return render_template("cart.html")
+@app.route('/about')
+def about():
+	return render_template("about.html")
 #####################
 
 
