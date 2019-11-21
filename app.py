@@ -6,6 +6,8 @@ app.secret_key = "MY_SUPER_SECRET_KEY"
 
 
 ##### Code here ######
+from databases import *
+
 
 @app.route('/')
 def map():
@@ -13,7 +15,7 @@ def map():
 
 @app.route('/store')
 def store():
-	return render_template("store.html")
+	return render_template("store.html", products=products)
 @app.route('/cart')
 def cart():
 	return render_template("cart.html")

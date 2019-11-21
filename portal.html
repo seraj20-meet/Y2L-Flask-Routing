@@ -1,16 +1,10 @@
-from model import Base, Product
-
-
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-
-
-engine = create_engine('sqlite:///database.db')
-Base.metadata.create_all(engine)
-DBSession = sessionmaker(bind=engine)
-session = DBSession()
-
-def add_product(name, price,picture_link,desc)
+<!DOCTYPE html>
+<html>
+<head>
+	<title>seses</title>
+</head>
+<body>
+	def add_product(name, price,picture_link,desc)
 Product_object = Product(
 	name=name,
 	price= price,
@@ -65,11 +59,7 @@ def query_by_name(their_name):
        name=their_name).first()
    return Product1
 
-add_product("name",200,"https://scx1.b-cdn.net/csz/news/800/2019/canwereallyk.jpg","monkeyyy")
-products = query_all()
 
-def add_to_cart(ProductID):
-	ProductID_object=cart(
-		ProductID=ProductID)
-	session.add(ProductID_object)
-	session.commit()
+
+</body>
+</html>
