@@ -5,8 +5,8 @@ app = Flask(__name__)
 app.secret_key = "MY_SUPER_SECRET_KEY"
 
 
-##### Code here ######
-from databases import *
+# ##### Code here ######
+# from databases import *
 
 
 @app.route('/')
@@ -15,13 +15,15 @@ def map():
 
 @app.route('/store')
 def store():
-	return render_template("store.html", products=products)
+	products=session.query(products).all()
+	return render_template("store.html",products=products )
 @app.route('/cart')
 def cart():
 	return render_template("cart.html")
 @app.route('/about')
 def about():
 	return render_template("about.html")
+
 #####################
 
 

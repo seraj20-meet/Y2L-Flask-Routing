@@ -10,13 +10,13 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_product(name, price,picture_link,desc)
-Product_object = Product(
+def add_product(name, price,picture_link,desc):
+	Product_object= Product(
 	name=name,
 	price= price,
 	picture_link= picture_link,
-	desc=description)
-	session.add(product_object)
+	desc=desc)
+	session.add(Product_object)
 	session.commit()
 
 def delete_product(their_name):
@@ -48,12 +48,9 @@ def query_all():
    Print all the students
    in the database.
    """
-   Productssss = session.query(
+   Products = session.query(
       Product).all()
-   return Products
-
-
-print(query_all())
+   return Product
 
 def query_by_name(their_name):
    """
@@ -65,11 +62,11 @@ def query_by_name(their_name):
        name=their_name).first()
    return Product1
 
-add_product("name",200,"https://scx1.b-cdn.net/csz/news/800/2019/canwereallyk.jpg","monkeyyy")
-products = query_all()
+# add_product("name",200,"https://scx1.b-cdn.net/csz/news/800/2019/canwereallyk.jpg","monkeyyy")
+# products = query_all()
 
 def add_to_cart(ProductID):
-	ProductID_object=cart(
-		ProductID=ProductID)
-	session.add(ProductID_object)
+	Cart_object=cart(
+	ProductID=ProductID)
+	session.add(Cart_object)
 	session.commit()

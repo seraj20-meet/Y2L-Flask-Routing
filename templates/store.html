@@ -43,7 +43,7 @@
 
 <h2 style="text-align:center">Product Card</h2>
 
-<div class="card">
+<!-- <div class="card">
   <img src="otis.jpeg" alt="otis" style="width:100%">
   <h1>mmmmmowwwwwwwwwwwwww</h1>
   <p class="price">$19.99</p>
@@ -58,6 +58,18 @@
   <p class="price">{{products[0].price}}</p>
   <p><button>add to cart</button></p>
 
+</div> -->
+
+{% for product in products %}
+
+<div class="card">
+  <img src="../{{product.picture_Link}}" alt="{{product.Name}}" style="width:100%">
+  <h1>{{product.Name}}</h1>
+  <p class="price"> {{product.Price}} </p>
+  <p>{{product.Description}}</p>
+  <p><button><a href="/Add_To_Cart/{{product.id}}"> add to cart </button> </p>
 </div>
+
+{% endfor %}
 </body>
 </html>
